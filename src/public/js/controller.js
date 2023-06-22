@@ -1,5 +1,3 @@
-
-
 // todo: llamar la url
 const url = "http://3.216.22.69:4000/api/personas";
 
