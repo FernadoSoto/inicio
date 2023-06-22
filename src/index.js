@@ -23,7 +23,7 @@ const conexion = mysql.createPool({
 });
 
 function startServer() {
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3001;
 
   const server = app.listen(port, function () {
     console.log('Servidor funcionando en puerto: ' + port);
@@ -78,7 +78,7 @@ app.get('/api/fechas_civicas', function (req, res) {
   });
 });
 
-app.listen(4000, () => {
-    console.log('El servidor está funcionando en el puerto 4000');
+app.listen(3001, () => {
+    console.log('El servidor está funcionando en el puerto 3001');
   });
   
