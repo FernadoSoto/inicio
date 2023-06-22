@@ -9,7 +9,7 @@ app.use(cors());
 
 const conexion = mysql.createPool({
   host: "3.216.22.69",
-  user: "fernando",
+  user: "fernan",
   password: "admin",
   database: "formulario"
 });
