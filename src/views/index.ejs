@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="estilos/presentacion.css">
+    <script src="form.js"></script>
+    <title>I.E.P. Santa Rita de Cassia</title>
+
+    <script src="https://kit.fontawesome.com/4bf0ad0780.js" 
+    crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:3000/api/fechas_civicas",
+                method: "GET",
+                success: function(data) {
+                    var popup = document.createElement('div');
+                    popup.classList.add('popup');
+
+                    var closeBtn = document.createElement('span');
+                    closeBtn.classList.add('popup-close');
+                    closeBtn.textContent = 'x';
+                    popup.appendChild(closeBtn);
+
+                    if (data.length > 0) {
+                        var title = document.createElement('div');
+                        title.classList.add('popup-title');
+                        title.textContent = "Fechas cívicas de hoy";
+                        popup.appendChild(title);
+
+                        var message = document.createElement('div');
+                        message.classList.add('popup-message');
+
+                        for (var i = 0; i < data.length; i++) {
+                            var fecha = new Date(data[i].FECHA).toLocaleDateString();
+                            var descrip = data[i].DESCRIP;
+                            message.textContent += "Hoy " + fecha + ", se celebra " + descrip + ".\n";
+                        }
+
+                        popup.appendChild(message);
+                    } else {
+                        popup.textContent = "No hay fechas cívicas hoy.";
+                    }
+
+                    closeBtn.addEventListener('click', function() {
+                        popup.style.display = 'none';
+                    });
+
+                    document.body.appendChild(popup);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(event) {
+                var popup = document.querySelector('.popup');
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+    </script>      
+</head>
+<body>
+    <a herf="http://localhost:8080/figma/" onclick="returnconfirmar()"></a>
+    <!--botones flotantes-->
+    <a href="#" class="btn-whatsapp">
+        <img src="./IMG/what.png" alt="contiene contactanos">
+    </a>
+    <a href="https://www.facebook.com/iepsantaritadecassia.canete" class="btn-face">
+        <img src="./IMG/face.png" alt="contiene contactanos">
+    </a>
+    <main class="main">
+        <section class="ContenedorCabe">
+            <header class="cabecera">
+                <div class="logo">
+                    <img src="IMG\InsigniaSRC.png" alt="logo SRC" width="80px">  
+                </div>
+                <nav class="navegacion">
+                    <a href="#Nosotros" class="link">Nosotros</a>
+                    <a href="#Noticias" class="link">Noticias</a>
+                    <a href="#GALERIA" class="link">Galeria</a>
+                    <a href="#DocumentosDeGestion" class="link">Documentos de Gestion</a>
+                    <a href="#Contactanos" class="link">Contactanos</a>
+                </nav>
+            </header>
+            
+            <div class="Banner">
+                <div class="BannerTitulo">
+                    <h1 onmouseover="style.color = 'red'" onmouseout="style.color = '#2F327D'">I.E.P. SANTA RITA DE CASSIA</h1>
+                    <div class="Contenido">
+                        <p>Secundaria SANTA RITA DE CASSIA <br> 
+                        Pública - Sector Educación</p>
+                        <div class="popup">
+                            <script src="./conexionMYSQL/index.js"></script>
+                        </div>
+                        
+                        <!-- adjuntar algun video ejemplo -->
+                        
+                    </div>
+                    <video id="myVideo" class="videosrc" width="500" height="350" controls muted>
+                    <source class="videosrc" src="./videos/sanR.mp4" type="video/mp4">
+                </video>
+                </div>
+                                  
+                <div class="REIGALERY">
+                    <img src="IMG\REIIMG1.jpg" alt="1">
+                    <img src="IMG/baner02.jpg" alt="2">
+                    <img src="IMG/baner03.jpg" alt="3">
+                    <img src="IMG/baner04.jpg" alt="4">
+                    <img src="IMG\REIIMG5.jpg" alt="5">
+                </div>
+            </div>       
+        </section>
+        <section class="ContenedorNosotros" id="Nosotros">
+            <div class="ReseñaHistorica">
+                <hr>
+                <h1>RESEÑA HISTORICA</h1>
+            </div>
+            <div class="RECOntenido">
+                <div class="rese_">
+                <p>
+                    La institución educativa pública «Santa Rita de Cassia», surge en el año de 1962 como consecuencia del desdoblamiento del
+                    entonces colegio Nacional Mixto «José Buenaventura Sepúlveda», después de ello se creó el colegio Nacional de mujeres
+                    «Santa Rita de Cassia» en honor a la santa italiana que fue ejemplo de piedad, bondad y fé.Su primera directora fue la
+                    Dra. Aurea Torres Plascencia de Díaz, persona que destacó por su buena administración educativa y la práctica de las buenas
+                    relaciones humanas. Al iniciar sus actividades educativas contaba con solo ocho docentes y una sección de primeraño de
+                    Educación Secundaria.El 22 de setiembre de 1962 se estableció en su propio local, situado hasta hoy con 78 docentes y 1600 
+                    alumnas, distribuidas en 43 secciones.
+                </p>
+                </div>
+            </div>
+        </section>
+        <section class="MisiónYVisión">
+            <div class="container__cards">
+                <div class="card">
+                    <div class="cover__card">
+                        <img src="IMG/vision.png" alt="">
+                    </div>
+                    <h2>VISION</h2>
+                    <p>La misión de nuestra
+                    institución educativa es
+                    brindar una educación de
+                    calidad que prepare a
+                    nuestros estudiantes para
+                    enfrentar los desafíos del
+                    mundo actual y del futuro.
+                    </p>
+                    <hr>
+                </div>
+                <div class="card">
+                    <div class="cover__card">
+                        <img src="IMG/orientacion.png" alt="">
+                    </div>
+                    <h2>MISION</h2>
+                    <p>Queremos ser un modelo de
+                    excelencia académica,
+                    innovación y compromiso social.
+                    Nuestro objetivo es preparar a
+                    nuestros estudiantes para ser
+                    líderes en sus comunidades y 
+                    contribuir al desarrollo sostenible
+                    y equitativo de la sociedad.
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        </section>
+        <!--MENSAJE DEL DIRECTOR-->
+        <section class="Mensaje">
+            <div>
+                <img src="IMG/director.jpg" />
+            </div>
+            <div class="texto">
+                <h1 class="titulo">JOVENES, PADRES DE FAMILIA , PERSONAL DOCENTE Y ADMINISTRATIVO:</h1>
+                <p class="menssage">
+                    Como institución educativa, nos enorgullece ofrecer una educación de calidad que fomenta el desarrollo integral 
+                    de cada una de nuestros estudiantes. Estamos comprometidos en brindar un ambiente de aprendizaje seguro y acogedor, 
+                    donde todas las mujeres tendrán la oportunidad de expresarse libremente y desarrollar sus habilidades y destrezas..
+                </p>
+            </div>
+        </section>
+    <!--TURNO MAÑANA-->
+
+        <div class="ORGANIGRAMA">
+            <div class="titu_org">
+            <hr>
+            <h1>ORGANIGRAMA</h1>
+            </div>
+            <div>
+                <img src="IMG/ORGANIGRAMA.png" alt="">
+            </div>
+        </div>
+    <!--TURNO MAÑANA-->        
+        <div class="titu_prof">
+            <hr>
+            <h1>PROFESORES</h1>
+        </div>
+    <section class="prof-section">
+        <div class="owl-carousel custom-carousel owl-theme">
+        <div class="item active" style="background-image: url(IMG/VICENTE\ BRAVO\ Ketty\ Cecilia.jpg);">
+            <div class="item-desc">
+            <h3>VICENTE BRAVO Ketty</h3>
+            <p>En los campos de batalla donde el fútbol se convierte en una danza de destreza y pasión, 
+                surge un jugador cuyo talento es tan inmenso como la grandeza de los dioses. Su nombre es 
+                Lionel Messi, y su presencia en el terreno de juego es una demostración de habilidad y genialidad.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(IMG/SUSANIBAR\ MATURANO\,\ Yennyffer\ Giselda.jpg);">
+            <div class="item-desc">
+            <h3>SUSANIBAR MATURANO Giselda</h3>
+            <p>En los estadios donde la gloria se encuentra con la pasión, surge un jugador cuyo nombre 
+                resuena en los corazones de millones de seguidores en todo el mundo. Su nombre es 
+                Cristiano Ronaldo, un titán del fútbol cuya grandeza se eleva por encima de todos los demás.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(IMG/SOLANO\ FERNANDEZ\ Hilda\ Francisca.jpg);">
+            <div class="item-desc">
+            <h3>SOLANO FERNANDEZ Hilda</h3>
+            <p>En las vastas profundidades del sombrío universo de Warhammer 40,000, donde la guerra y la 
+                oscuridad son moneda corriente, surge un líder cuyo poder y sabiduría trascienden la comprensión 
+                humana. Su título es el Emperador de la Humanidad, un ser legendario cuya visión y determinación 
+                han dado forma al destino de miles de mundos.</p>
+            </div>
+          </div>
+        <div class="item" style="background-image: url(IMG/SAMAN\ ORE\ \,\ Isabel\ Silhoe.jpg);">
+            <div class="item-desc">
+            <h3>SAMAN ORE Isabel</h3>
+            <p>Con su legión de Ángeles Oscuros a su lado, Lion El'Jonson ha luchado contra enemigos implacables 
+                y traidores a lo largo de incontables guerras. Su habilidad para leer los movimientos de sus oponentes 
+                y su capacidad para tomar decisiones dificiles en los momentos criticos lo desuso en una fuerza 
+                imparable en el campo de batalla.</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(IMG/RODRIGUEZ\ CUSTODIO\ Edgar.jpg);">
+            <div class="item-desc">
+            <h3>RODRIGUEZ CUSTODIO Edgar</h3>
+            <p>En las sombras más profundas de la ciudad, donde los asesinos acechan y las venganzas se entretejen, 
+                surge un hombre cuyo nombre hace temblar a los más valientes y aterradora a cualquier alma que haya 
+                cruzado su camino. Su nombre es John Wick, un legendario asesino a sueldo cuya habilidad y determinación 
+                lo determinaron en una fuerza imparable..</p>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(IMG/LIZANA\ ENCISO\,\ Fernando.jpg);">
+            <div class="item-desc">
+            <h3>LIZANA ENCISO Fernando</h3>
+            <p>La historia de Chayanne es una epopeya de música y emociones, donde las melodías y letras se entrelazan 
+                con las alegrías y tristezas de la vida. Su legado se convierte en una inspiración para aquellos que sueñan 
+                en grande y persiguen sus pasiones, recordándoles que con trabajo arduo y amor por lo que hacen, pueden 
+                alcanzar la grandeza.</p>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script><script  src="./js/profs.js"></script>
+    <!--documentos de gestion-->
+    <div class="gesti" id="DocumentosDeGestion">
+            <div class="titu_gest">
+                <hr>
+                <h1>DOCUMENTO DE GESTION</h1>
+            </div>
+    </div>   
+        <div class="DESCArgables">
+            <div class="button-borders">
+                <button class="primary-button">PLAN ESTRATEGICO</button>
+            </div>
+            <div class="button-borders">
+                <button class="primary-button">PLAN DE ACCION</button>
+            </div>
+            <div class="button-borders">
+                <button class="primary-button">REGLAMENTO INTERNO</button>
+            </div>
+        </div>
+        <div class="titu_plan">
+            <hr>
+            <h1>PLAN DE ESTUDIOS</h1>
+        </div>
+        <div class="DESCArgables">
+            <div class="button-borders">
+                <button class="primary-button">HORARIO ACADEMICO</button>
+            </div>
+            <div class="button-borders">
+                <button class="primary-button">PLAN DE ESTUDIO</button>
+            </div>
+        </div>
+    <!--Galeria-->
+    <div class="titu_gal" id="GALERIA">
+        <hr>
+        <h1>GALERIA</h1>
+    </div>
+    <section class="corr">
+        <div class="ful-img" id="fulImgBox">
+            <img src="https://i.pinimg.com/236x/2b/f4/4e/2bf44e370d806671838965fc32d82fff.jpg" id="fulImg" alt="">
+            <span onclick="closeImg()"><img src="https://cdn-icons-png.flaticon.com/128/458/458595.png" alt=""></span>
+        </div>
+        <div class="gallery">
+            <img src="IMG/exposiiicion.jpg" width="200%" onclick="openFulImg(this.src)" alt="">
+            <img src="IMG/santa-calle.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="IMG/palabra,alumna.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/92/f7/41/92f7411cccfc377074a15c3fd8711a6f.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/d7/41/db/d741db76af316799287b79530f4d556b.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/3c/d1/b2/3cd1b25ceaf563380f26a3563e974975.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/e9/63/89/e96389b9e88e1958ad77992388dacfe7.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/dc/b3/b7/dcb3b71eec488cb0f22bf68067b53065.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/4a/cc/63/4acc63e2a2862d1908c0cf163f6fc000.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/d3/3c/c1/d33cc1d06d69488f8b7ae196df2c8475.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/f2/08/ea/f208ead549d7707abad088dbaa0458df.jpg" onclick="openFulImg(this.src)" alt="">
+            <img src="https://i.pinimg.com/236x/92/f7/41/92f7411cccfc377074a15c3fd8711a6f.jpg" onclick="openFulImg(this.src)" alt="">
+        </div>
+        <!--escrip para el JS del carrusel-->
+        <script src="./js/galeria.js"></script>
+    </section>
+    <!--Formulario-->
+        <section class="FORMULARIO" id="Contactanos">
+            <form id="form" action="" class="formulario">
+                <h1 class="formulario_titulo">CONTACTANOS</h1>
+                    
+                    <input id="NOMBRES" type="text" class="formulario_input" placeholder=" ">
+                    <label for="" class="formulario_lable">Nombres y Apellidos</label>
+                    
+                    <input id="EMAIL" type="text" class="formulario_input" placeholder=" ">
+                    <label for="" class="formulario_lable">Correo</label>
+
+                    <input id="CELULAR" type="text" class="formulario_input" placeholder=" ">
+                    <label for="" class="formulario_lable">Telefono</label>
+
+                    <input id="MSG" type="text" class="formulario_input" placeholder=" ">
+                    <label for="" class="formulario_lable">Mensaje</label>
+
+                    <input id="btnCrear" type="submit" class="formulario_submit">
+            </form>
+        </section class="FooterMapa">
+            <script src="./js/controller.js"></script>
+        <section>
+            <div class="maps">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.222259477233!2d-76.38979872590991!3d-13.085095762099817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff9356063f7f5%3A0x72c2c8ca00d53e37!2sIEP%20-%20Santa%20Rita%20de%20Cassia!5e0!3m2!1ses-419!2spe!4v1686680014446!5m2!1ses-419!2spe"
+                    width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+          <p>© 2023 Tu Sitio Web. Todos los derechos reservados.</p>
+          <ul class="footer-links">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Galeria</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </footer>
+</body>
+</html>
