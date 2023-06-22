@@ -17,49 +17,50 @@
 
     <script>
         $(document).ready(function() {
-            $.ajax({
-                url: "http://3.216.22.69:4000/api/fechas_civicas",
-                method: "GET",
-                success: function(data) {
-                    var popup = document.createElement('div');
-                    popup.classList.add('popup');
+    $.ajax({
+        url: "http://3.216.22.69:3000/api/fechas_civicas",
+        method: "GET",
+        success: function(data) {
+            var popup = document.createElement('div');
+            popup.classList.add('popup');
 
-                    var closeBtn = document.createElement('span');
-                    closeBtn.classList.add('popup-close');
-                    closeBtn.textContent = 'x';
-                    popup.appendChild(closeBtn);
+            var closeBtn = document.createElement('span');
+            closeBtn.classList.add('popup-close');
+            closeBtn.textContent = 'x';
+            popup.appendChild(closeBtn);
 
-                    if (data.length > 0) {
-                        var title = document.createElement('div');
-                        title.classList.add('popup-title');
-                        title.textContent = "Fechas cívicas de hoy";
-                        popup.appendChild(title);
+            if (data.length > 0) {
+                var title = document.createElement('div');
+                title.classList.add('popup-title');
+                title.textContent = "Fechas cívicas de hoy";
+                popup.appendChild(title);
 
-                        var message = document.createElement('div');
-                        message.classList.add('popup-message');
+                var message = document.createElement('div');
+                message.classList.add('popup-message');
 
-                        for (var i = 0; i < data.length; i++) {
-                            var fecha = new Date(data[i].FECHA).toLocaleDateString();
-                            var descrip = data[i].DESCRIP;
-                            message.textContent += "Hoy " + fecha + ", se celebra " + descrip + ".\n";
-                        }
-
-                        popup.appendChild(message);
-                    } else {
-                        popup.textContent = "No hay fechas cívicas hoy.";
-                    }
-
-                    closeBtn.addEventListener('click', function() {
-                        popup.style.display = 'none';
-                    });
-
-                    document.body.appendChild(popup);
-                },
-                error: function(error) {
-                    console.log(error);
+                for (var i = 0; i < data.length; i++) {
+                    var fecha = new Date(data[i].FECHA).toLocaleDateString();
+                    var descrip = data[i].DESCRIP;
+                    message.textContent += "Hoy " + fecha + ", se celebra " + descrip + ".\n";
                 }
+
+                popup.appendChild(message);
+            } else {
+                popup.textContent = "No hay fechas cívicas hoy.";
+            }
+
+            closeBtn.addEventListener('click', function() {
+                popup.style.display = 'none';
             });
-        });
+
+            document.body.appendChild(popup);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+});
+
     </script>
     <script>
         window.addEventListener('DOMContentLoaded', function() {

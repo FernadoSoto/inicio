@@ -23,7 +23,7 @@ const conexion = mysql.createPool({
 });
 
 function startServer() {
-  const port = 4000;
+  const port = 3000;
 
   const server = app.listen(port, function () {
     console.log('Servidor funcionando en puerto: ' + port);
