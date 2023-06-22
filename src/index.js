@@ -8,9 +8,9 @@ app.use(express.urlencoded({ extended: true })); // Agrega esta línea
 app.use(cors());
 
 const conexion = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "",
+  host: "3.216.22.69",
+  user: "fernando",
+  password: "admin",
   database: "formulario"
 });
 
