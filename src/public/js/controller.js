@@ -1,7 +1,7 @@
 
 
 // todo: llamar la url
-const url = "http://3.216.22.69:3000/api/personas";
+const url = "http://3.216.22.69:4000/api/personas";
 
 let result = '';
 
