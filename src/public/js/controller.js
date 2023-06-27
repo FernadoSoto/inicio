@@ -18,7 +18,6 @@ const msg = document.getElementById("MSG");
 let option = '';
 
 // Boton crear
-// Boton crear
 btnCrear.addEventListener("click", () => {
     console.log("Boton activado");
     option = 'crear';
@@ -39,21 +38,44 @@ formArticulo.addEventListener('submit', (e) => {
             return false;
         } else {
             console.log("Todos los campos están completos.");
-            // Rest of the code for submitting the form
+            submitForm();
         }
     }
 });
 
-// Function to validate email format
+// formato para enviar el correo
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Function to validate celular format
+// formato para enviar el celular
 function validateCelular(celular) {
     // Assuming celular should be a 9-digit number
     const celularRegex = /^\d{9}$/;
     return celularRegex.test(celular);
+}
+
+// enviar el form
+function submitForm() {
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            NOMBRES: nombres.value,
+            EMAIL: email.value,
+            CELULAR: celular.value,
+            MSG: msg.value,
+        })
+    }).then(response => response.json())
+      .then(response => {
+          console.log("Formulario enviado exitosamente");
+          location.reload();
+      })
+      .catch(error => {
+          console.error("Error al enviar el formulario:", error);
+      });
 }
 
