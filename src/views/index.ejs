@@ -13,65 +13,10 @@
     crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
-
-    <script>
-        $(document).ready(function() {
-    $.ajax({
-        url: "http://3.216.22.69:3000/api/fechas_civicas",
-        method: "GET",
-        success: function(data) {
-            var popup = document.createElement('div');
-            popup.classList.add('popup');
-
-            var closeBtn = document.createElement('span');
-            closeBtn.classList.add('popup-close');
-            closeBtn.textContent = 'x';
-            popup.appendChild(closeBtn);
-
-            if (data.length > 0) {
-                var title = document.createElement('div');
-                title.classList.add('popup-title');
-                title.textContent = "Fechas cívicas de hoy";
-                popup.appendChild(title);
-
-                var message = document.createElement('div');
-                message.classList.add('popup-message');
-
-                for (var i = 0; i < data.length; i++) {
-                    var fecha = new Date(data[i].FECHA).toLocaleDateString();
-                    var descrip = data[i].DESCRIP;
-                    message.textContent += "Hoy " + fecha + ", se celebra " + descrip + ".\n";
-                }
-
-                popup.appendChild(message);
-            } else {
-                popup.textContent = "No hay fechas cívicas hoy.";
-            }
-
-            closeBtn.addEventListener('click', function() {
-                popup.style.display = 'none';
-            });
-
-            document.body.appendChild(popup);
-        },
-        error: function(error) {
-            console.log(error);
-        }
-    });
-});
-
-    </script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            document.addEventListener('click', function(event) {
-                var popup = document.querySelector('.popup');
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                }
-            });
-        });
-    </script>      
+    <script src="./js/calen.js"></script>
 </head>
 <body>
     <a herf="http://localhost:8080/figma/" onclick="returnconfirmar()"></a>
@@ -110,11 +55,11 @@
                         <!-- adjuntar algun video ejemplo -->
                         
                     </div>
-                    <video id="myVideo" class="videosrc" width="500" height="350" controls muted>
-                    <source class="videosrc" src="./videos/sanR.mp4" type="video/mp4">
-                </video>
+                    <video id="myVideo" class="center-video" width="500" height="350" controls muted>
+                        <source src="./videos/sanR.mp4" type="video/mp4">
+                    </video>
+                    
                 </div>
-                                  
                 <div class="REIGALERY">
                     <img src="IMG\REIIMG1.jpg" alt="1">
                     <img src="IMG/baner02.jpg" alt="2">
@@ -325,25 +270,28 @@
         <script src="./js/galeria.js"></script>
     </section>
     <!--Formulario-->
-        <section class="FORMULARIO" id="Contactanos">
-            <form id="form" action="" class="formulario">
-                <h1 class="formulario_titulo">CONTACTANOS</h1>
-                    
-                    <input id="NOMBRES" type="text" class="formulario_input" placeholder=" ">
-                    <label for="" class="formulario_lable">Nombres y Apellidos</label>
-                    
-                    <input id="EMAIL" type="text" class="formulario_input" placeholder=" ">
-                    <label for="" class="formulario_lable">Correo</label>
+    <section class="FORMULARIO" id="Contactanos">
+        <form id="form" action="" class="formulario">
+            <h1 class="formulario_titulo">CONTACTANOS</h1>
 
-                    <input id="CELULAR" type="text" class="formulario_input" placeholder=" ">
-                    <label for="" class="formulario_lable">Telefono</label>
-
-                    <input id="MSG" type="text" class="formulario_input" placeholder=" ">
-                    <label for="" class="formulario_lable">Mensaje</label>
-
-                    <input id="btnCrear" type="submit" class="formulario_submit">
-            </form>
-        </section class="FooterMapa">
+                <label for="" class="formulario_lable">Nombres y Apellidos</label>
+                <input id="NOMBRES" type="text" class="formulario_input" placeholder=" ">
+                
+                <label for="" class="formulario_lable">Correo</label>
+                <input id="EMAIL" type="text" class="formulario_input" placeholder=" ">
+                
+                <label for="" class="formulario_lable">Telefono</label>
+                <input id="CELULAR" type="text" class="formulario_input" placeholder=" ">
+                
+                <label for="" class="formulario_lable">Mensaje</label>
+                <input id="MSG" type="text" class="formulario_input" placeholder=" ">
+                
+                <input id="btnCrear" type="submit" class="formulario_submit">
+        </form>
+    </section>
+        
+        <section class="FooterMapa">
+            <script src="./js/validacion.js"></script>
             <script src="./js/controller.js"></script>
         <section>
             <div class="maps">
