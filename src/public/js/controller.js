@@ -52,8 +52,8 @@ function validateEmail(email) {
 
 // Function to validate celular format
 function validateCelular(celular) {
-    // Assuming celular should be a 10-digit number
-    const celularRegex = /^\d{10}$/;
+    // Assuming celular should be a 9-digit number
+    const celularRegex = /^\d{9}$/;
     return celularRegex.test(celular);
 }
 
