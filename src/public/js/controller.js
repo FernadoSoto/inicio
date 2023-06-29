@@ -54,9 +54,9 @@ formArticulo.addEventListener('submit', (e) => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Your work has been saved',
+                title: 'Tu mensaje ha sido enviado correctamente',
                 showConfirmButton: false,
-                timer: 1500
+                timer: 2000
                 })
             submitForm();
         }
