@@ -1,3 +1,5 @@
+
+
 // todo: llamar la url
 const url = "http://3.210.133.54:3000/api/personas";
 
@@ -28,16 +30,34 @@ formArticulo.addEventListener('submit', (e) => {
     e.preventDefault();
     if (option == 'crear') {
         if (nombres.value == "" || email.value == "" || celular.value == "" || msg.value == "") {
-            alert("Asegúrese de completar todos los campos.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Llena todos los campos por favor'
+                })
             return false;
         } else if (!validateEmail(email.value)) {
-            alert("Por favor, ingrese un correo electrónico válido.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Hay un error en tu e-mail'
+                })
             return false;
         } else if (!validateCelular(celular.value)) {
-            alert("Por favor, ingrese un número de teléfono válido.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Hay un error en tu numero de celular'
+                })
             return false;
         } else {
-            console.log("Todos los campos están completos.");
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+                })
             submitForm();
         }
     }
@@ -78,4 +98,3 @@ function submitForm() {
           console.error("Error al enviar el formulario:", error);
       });
 }
-
