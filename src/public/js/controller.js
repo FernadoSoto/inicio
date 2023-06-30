@@ -31,23 +31,29 @@ formArticulo.addEventListener('submit', (e) => {
     if (option == 'crear') {
         if (nombres.value == "" || email.value == "" || celular.value == "" || msg.value == "") {
             Swal.fire({
+                position: 'center',
                 icon: 'error',
-                title: 'Oops...',
-                text: 'Llena todos los campos por favor'
+                title: 'Llena todos los campos por favor',
+                showConfirmButton: false,
+                timer: 4000
                 })
             return false;
         } else if (!validateEmail(email.value)) {
             Swal.fire({
+                position: 'center',
                 icon: 'error',
-                title: 'Oops...',
-                text: 'Hay un error en tu e-mail'
+                title: 'Hay un error en tu e-mail',
+                showConfirmButton: false,
+                timer: 4000
                 })
             return false;
         } else if (!validateCelular(celular.value)) {
             Swal.fire({
+                position: 'center',
                 icon: 'error',
-                title: 'Oops...',
-                text: 'Hay un error en tu numero de celular'
+                title: 'Hay un error en tu numero de celular',
+                showConfirmButton: false,
+                timer: 4000
                 })
             return false;
         } else {
@@ -90,11 +96,13 @@ function submitForm() {
             MSG: msg.value,
         })
     }).then(response => response.json())
-      .then(response => {
-          console.log("Formulario enviado exitosamente");
-          location.reload();
-      })
-      .catch(error => {
-          console.error("Error al enviar el formulario:", error);
-      });
+    .then(response => {
+        console.log("Formulario enviado exitosamente");
+        setTimeout(() => {
+            location.reload();
+            }, 6000); 
+        })      
+    .catch(error => {
+        console.error("Error al enviar el formulario:", error);
+        });
 }
