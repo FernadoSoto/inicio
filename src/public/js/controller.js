@@ -56,7 +56,7 @@ formArticulo.addEventListener('submit', (e) => {
                 icon: 'success',
                 title: 'Tu mensaje ha sido enviado correctamente',
                 showConfirmButton: false,
-                timer: 2000
+                timer: 5000
                 })
             submitForm();
         }
