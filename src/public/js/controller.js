@@ -62,7 +62,7 @@ formArticulo.addEventListener('submit', (e) => {
                 icon: 'success',
                 title: 'Tu mensaje ha sido enviado correctamente',
                 showConfirmButton: false,
-                timer: 5000
+                timer: 4000
                 })
             submitForm();
         }
@@ -100,7 +100,7 @@ function submitForm() {
         console.log("Formulario enviado exitosamente");
         setTimeout(() => {
             location.reload();
-            }, 6000); 
+            }, 4000); 
         })      
     .catch(error => {
         console.error("Error al enviar el formulario:", error);
