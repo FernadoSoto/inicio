@@ -20,13 +20,6 @@
 </head>
 <body>
     <a herf="http://localhost:8080/figma/" onclick="returnconfirmar()"></a>
-    <!--botones flotantes-->
-    <a href="#" class="btn-whatsapp">
-        <img src="./IMG/what.png" alt="contiene contactanos">
-    </a>
-    <a href="https://www.facebook.com/iepsantaritadecassia.canete" class="btn-face">
-        <img src="./IMG/face.png" alt="contiene contactanos">
-    </a>
     <main class="main">
         <section class="ContenedorCabe">
             <header class="cabecera">
@@ -48,6 +41,16 @@
                     <div class="Contenido">
                         <p>Secundaria SANTA RITA DE CASSIA <br> 
                         Pública - Sector Educación</p>
+                        <div class="rec_face">
+                            <a href="https://www.facebook.com/iepsantaritadecassia.canete">
+                                <img src="IMG/face.png" alt="">
+                            </a>
+                        </div>
+                        <div class="rec_you">
+                            <a href="https://www.youtube.com/watch?v=fc67m61zc5E">
+                                <img src="IMG/youtube.png" alt="">
+                            </a>
+                        </div>
                         <div class="popup">
                             <script src="./conexionMYSQL/index.js"></script>
                         </div>
@@ -71,8 +74,7 @@
         </section>
         <section class="ContenedorNosotros" id="Nosotros">
             <div class="ReseñaHistorica">
-                <hr>
-                <h1>RESEÑA HISTORICA</h1>
+                <h1>RESEÑA <strong>HISTÓRICA</strong></h1>
             </div>
             <div class="RECOntenido">
                 <div class="rese_">
@@ -87,7 +89,6 @@
                 </p>
                 </div>
             </div>
-        </section>
         <section class="MisiónYVisión">
             <div class="container__cards">
                 <div class="card">
@@ -125,33 +126,50 @@
         </section>
         <!--MENSAJE DEL DIRECTOR-->
         <section class="Mensaje">
-            <div>
-                <img src="IMG/director.jpg" />
+            <div class="titu_direc">
+                <h1>PALABRAS DEL <strong>DIRECTOR</strong></h1>
             </div>
             <div class="texto">
-                <h1 class="titulo">JOVENES, PADRES DE FAMILIA , PERSONAL DOCENTE Y ADMINISTRATIVO:</h1>
                 <p class="menssage">
-                    Como institución educativa, nos enorgullece ofrecer una educación de calidad que fomenta el desarrollo integral 
-                    de cada una de nuestros estudiantes. Estamos comprometidos en brindar un ambiente de aprendizaje seguro y acogedor, 
-                    donde todas las mujeres tendrán la oportunidad de expresarse libremente y desarrollar sus habilidades y destrezas..
+                JOVENES, PADRES DE FAMILIA , PERSONAL DOCENTE Y ADMINISTRATIVO: Como institución educativa, nos enorgullece ofrecer una educación de calidad que fomenta el desarrollo integral 
+                de cada una de nuestros estudiantes. Estamos comprometidos en brindar un ambiente de aprendizaje seguro y acogedor, 
+                donde todas las mujeres tendrán la oportunidad de expresarse libremente y desarrollar sus habilidades y destrezas..
                 </p>
+                <div class="direc_img">
+                    <img src="IMG/director02.png" alt="">
+                    <img src="IMG/director.jpg" alt="">
+                </div>
+            </div>
+            <div class="cont_aniversario">
+                <div class="aniv_texto">
+                    <h1>I.E.P Santa Rita de Cassia -<strong>Aniversario de la Provincia de Cañete</strong></h1>
+                    <p>colegio, Alma Mater de la Educación Secundaria Femenina en Cañete.
+                    La institución educativa pública "Santa Rita de Cassia"</p>
+                </div>
+                <div class="rec01"></div>
+                <div class="rec02"></div>
+                <video src="videos/sanR.mp4"></video>
+                
             </div>
         </section>
-    <!--TURNO MAÑANA-->
+
+    <!--ORGANIGRAMA-->
 
         <div class="ORGANIGRAMA">
             <div class="titu_org">
-            <hr>
-            <h1>ORGANIGRAMA</h1>
+            <h1>I.E.P Santa Rita de Cassia - <strong>ORGANIGRAMA</strong></h1>
             </div>
             <div>
+                <div class="cuadrado"></div>
                 <img src="IMG/ORGANIGRAMA.png" alt="">
+                <div class="cuadrado2"></div>
             </div>
         </div>
     <!--TURNO MAÑANA-->        
         <div class="titu_prof">
-            <hr>
+            <div class="rectangulo"></div>
             <h1>PROFESORES</h1>
+            <img src="IMG/siluetaprof.png" alt="">
         </div>
     <section class="prof-section">
         <div class="owl-carousel custom-carousel owl-theme">
@@ -243,9 +261,10 @@
             </div>
         </div>
     <!--Galeria-->
-    <div class="titu_gal" id="GALERIA">
-        <hr>
+    <div class="titu_gal">
+        <div class="rectangulo_gal"></div>
         <h1>GALERIA</h1>
+        <img src="IMG/galeria.png" alt="">
     </div>
     <section class="corr">
         <div class="ful-img" id="fulImgBox">
@@ -291,6 +310,7 @@
     </section>
         
         <section class="FooterMapa">
+            <script src="./js/calen.js"></script>
             <script src="./js/controller.js"></script>
         <section>
             <div class="maps">

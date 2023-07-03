@@ -70,7 +70,6 @@ overflow-y: hidden;
 }
 
 .BannerTitulo {
-  display: none;
 width: 45%;
 height: 40%;
 font-size: x-large;
@@ -89,15 +88,39 @@ padding-right: 60px;
 padding-top: 45px;
 line-height: 30px;
 }
-
+.rec_face{
+  position: relative;
+  width: 180px;
+  height: 60px;
+  margin-top: 130px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+.Contenido img{
+  position: relative;
+  top: 10px;
+  left: -120px;
+  width: 20%;
+}
+.rec_you{
+  position: relative;
+  width: 180px;
+  height: 60px;
+  margin-top: -60px;
+  left: 260px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
 #myVideo {
   display: none;
 }
 
 .REIGALERY {
   display: flex;
-  width: 100%;
-  height: 325px;
+  width: 70%;
+  height: 300px;
+  padding-right: 20px;
+  padding-left: 30px;
 }
 
 .REIGALERY img {
@@ -183,12 +206,9 @@ line-height: 30px;
 .ContenedorNosotros {
 width: 100%;
 height: 100%;
-background-color: #171B41;
 }
-
 .ReseñaHistorica {
 font-size: x-large;
-color: #030303;
 background-color: #ffffff;
 padding-top: 45px;
 display: flex;
@@ -202,27 +222,29 @@ border: 3px solid #FF4655;
 }
 .ReseñaHistorica h1 {
 padding: 0 20px;
+color: #2F327D;
 position: relative;
-background-color: #fff;
+background-color: #fdfdfd;
+}
+.ReseñaHistorica strong{
+  color: #FBA333;
+  padding: 20px;
 }
 .rese_{
-width: 100%;
+width: 50%;
 height: 500px;
-background-color: #171B41;
 border-radius: 50px;
-box-shadow: -15px 15px 15px #000000;
 }
 .rese_ p{
 margin: 50px;
 text-align: justify;
-color: #fff;
+color: #000000;
 }
 .RECOntenido {
-background-color: #ffffff;
 padding-top: 45px;
 display: flex;
-padding-left: 150px;
-padding-right: 150px;
+align-items: center;
+justify-content: center;
 }
 
 /* Consulta de medios para tamaños de pantalla pequeños */
@@ -253,7 +275,7 @@ padding-right: 150px;
 .MisiónYVisión {
   width: 100%;
   margin-top: 350px;
-  margin-bottom: 200px; /* Add margin-bottom to create space between sections */
+  margin-bottom: 0px; /* Add margin-bottom to create space between sections */
 }
 
 .container__cards {
@@ -273,7 +295,7 @@ padding-right: 150px;
   margin: 50px;
   padding: 20px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  background: rgba(214, 190, 190, 0.342);
+  background: rgba(238, 235, 235, 0.342);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
@@ -363,60 +385,83 @@ padding-right: 150px;
 }
 
 /* PALABRA DEL DIRECTOR */
-
-.Mensaje {
-background-color: #DC3434;
-margin-top: -400px;
-margin-bottom: 50px;
-width: 100%;
-height: 500px;
-align-items: center;
-text-align: center;
+.Mensaje{
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 1000px;
+  margin-bottom: 0px;
 }
-
-.menssage {
-font-size: 14px;
-color: #020202;
-
-}
-
-.Mensaje img {
-position: relative;
-display: flex;
-width: 50%;
-left: 30%;
-box-shadow: -15px 20px 20px #000000;
-}
-
-.Mensaje {
-display: flex;
-padding: 25px;
-}
-
-.titulo {
-font-size: 10px;
-color: #fafafa;
-text-align: justify;
-padding-bottom: 5px;
-}
-.Mensaje p{
-color: #fff;
-text-align: justify;
+.titu_direc{
+  margin: auto;
+  margin-top: -200px;
 }
 .texto{
-position: relative;
-background-color: #171B41;
-border-radius: 50px;
-width: 40%;
-height: 90%;
-left: -5%;
-padding-bottom: 25px;
-text-align: center;
-padding: 50px 90px;
-box-shadow: -10px 10px 10px #000000;
+  line-height: 1.5;
+  width: 50%;
+  position: relative;
+  top: 50px;
+  text-align: justify;
+  margin: 0 auto;
+}
+.direc_img{
+  position: relative;
+  display: flex;
+}
+.Mensaje img{
+  position: relative;
+  margin-top: 100px;
+  width: 50%;
+  right: 300px;
+  margin-left: 200px;
+  border-radius: 20px;
+}
+.Mensaje h1{
+  color: #2F327D;
+}
+.Mensaje strong{
+  color: #FBA333;
+}
+.cont_aniversario{
+  position: relative;
+  display: flex;
+  margin-top: 200px;
+}
+.aniv_texto{
+  line-height: 1.5;
+  text-align: justify;
+  margin-left: 220px;
+  margin-right: 100px;
+  padding: 20px;
+}
+.cont_aniversario h1{
+  margin-bottom: 20px;
+}
+.rec01{
+  width: 100px;
+  height: 100px;
+  background-color: #171B41;
+  position: absolute;
+  left: 790px;
+  margin-top: -20px;
+  border-radius: 20px;
+}
+.rec02{
+  width: 100px;
+  height: 100px;
+  background-color: #DC3434;
+  position: absolute;
+  right: 110px;
+  margin-top: 150px;
+  border-radius: 20px;
+}
+.cont_aniversario video{
+  position: relative;
+  width: 30%;
+  margin-right: 130px;
 }
 /* Estilos para pantallas de escritorio */
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
 .Mensaje {
   display: flex;
   justify-content: center;
@@ -429,13 +474,12 @@ box-shadow: -10px 10px 10px #000000;
 .Mensaje img {
   width: 50%;
   position: relative;
-  left: 25%; /* Ajusta el valor para centrar la imagen */
+  left: 25%; Ajusta el valor para centrar la imagen 
   box-shadow: -15px 20px 20px #000000;
 }
 
 .texto {
   position: relative;
-  background-color: #171B41;
   border-radius: 5%;
   width: 45%;
   height: 90%;
@@ -443,11 +487,10 @@ box-shadow: -10px 10px 10px #000000;
   padding-bottom: 25px;
   text-align: center;
   padding: 50px 90px;
-  box-shadow: -10px 10px 10px #000000;
 }
-}
+}*/
 
-/* Estilos para dispositivos móviles */
+/* Estilos para dispositivos móviles 
 @media screen and (max-width: 767px) {
 .Mensaje {
   display: flex;
@@ -466,8 +509,8 @@ box-shadow: -10px 10px 10px #000000;
   border-radius: 10px;
   box-shadow: none;
   margin-bottom: 20px;
-  margin-left: auto; /* Centra la imagen horizontalmente */
-  margin-right: auto; /* Centra la imagen horizontalmente */
+  margin-left: auto; /* Centra la imagen horizontalmente 
+  margin-right: auto; /* Centra la imagen horizontalmente 
 }
 
 .texto {
@@ -481,34 +524,53 @@ box-shadow: -10px 10px 10px #000000;
   text-align: center;
   padding: 30px;
   }
-}
+}*/
 
 /* organigrama */
+.ORGANIGRAMA{
+  position: relative;
+  text-align: center;
+}
 .titu_org{
-font-size: x-large;
 padding-top: 5px;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-bottom: 80px;
-}
-.titu_org hr{
-width: 90%;
-position: absolute;
-border: 3px solid #FF4655;
+margin-bottom: 0px;
 }
 .titu_org h1{
-
 position: relative;
-background-color: #fff;
-padding: 0 20px;
+margin-bottom: -200px;
+}
+.ORGANIGRAMA strong{
+  color: #FBA333;
+}
+.ORGANIGRAMA h1{
+  color: #2F327D;
+}
+.cuadrado{
+  position: relative;
+  background-color: #DC3434;
+  width: 200px;
+  height: 200px;
+  left: 230px;
+  bottom: -170px;
+  border-radius: 20px;
 }
 .ORGANIGRAMA img{
-width: 80%;
-position: relative;
-left: 10%;
+  width: 60%;
+  height: 900px;
+  position: relative;
 }
-/* Estilos para pantallas de escritorio */
+.cuadrado2{
+  background-color: #171B41;
+  width: 200px;
+  height: 200px;
+  margin-left: 67%;
+  margin-top: -170px;
+  border-radius: 20px;
+}
+/* Estilos para pantallas de escritorio 
 @media screen and (min-width: 768px) {
 .titu_org {
   font-size: x-large;
@@ -532,9 +594,9 @@ left: 10%;
 }
 
 .ORGANIGRAMA img {
-  width: 80%;
+  width: 50%;
   position: relative;
-  left: 10%;
+  margin: auto;
 }
 }
 
@@ -564,22 +626,29 @@ left: 10%;
 /*carrusel profesores*/
 .titu_prof{
   margin-top: 0px;
-  font-size: x-large;
-  padding-top: 5px;
+  padding-top: 200px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 80px;
 }
-.titu_prof hr{
-  width: 90%;
-  position: absolute;
-  border: 3px solid #FF4655;
-}
 .titu_prof h1{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  left: 150px;
+}
+.titu_prof img{
+  position: absolute;
+  width: 5%;
+  left: 400px;
+}
+.rectangulo{
+  background-color: #171B41;
   position: relative;
-  background-color: #ffffff;
-  padding: 0 20px;
+  width: 430px;
+  top: -45px;
+  height: 150px;
+  left: 100px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 /*CONTENIDO*/
 .titulo {
@@ -907,22 +976,31 @@ margin-top: -80px;
 
 /*galeria*/
 .titu_gal{
-font-size: x-large;
-padding-top: 90px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 50px;
-}
-.titu_gal hr{
-width: 90%;
-position: absolute;
-border: 3px solid #FF4655;
+  margin-top: 0px;
+  padding-top: 200px;
+  display: flex;
+  margin-bottom: 80px;
 }
 .titu_gal h1{
-position: relative;
-background-color: #fff;
-padding: 0 20px;
+  position: absolute;
+  color: rgb(255, 255, 255);
+  left: 150px;
+}
+.titu_gal img{
+  position: absolute;
+  width: 10%;
+  margin-top: -40px;
+  left: 350px;
+}
+.rectangulo_gal{
+  background-color: #171B41;
+  position: relative;
+  width: 430px;
+  top: -45px;
+  height: 150px;
+  margin-left: 100px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .corr{
 padding-top: 30px;
@@ -1076,94 +1154,6 @@ max-width: 600px;
 }
 
 /* Boton flotante whatsapp */
-.btn-whatsapp {
-position: fixed;
-bottom: 20px;
-right: 20px;
-padding-bottom: 40px;
-}
-
-.btn-whatsapp:before,
-.btn-whatsapp:after {
-content: "";
-position: absolute;
-top: -30px;
-right: 30px;
-width: 45px;
-height: 45px;
-border-radius: 50%;
-background-color: #00e676;
-opacity: 0;
-animation: onda 1.7s infinite;
-}
-
-.btn-whatsapp:before {
-animation-delay: 1s;
-}
-
-.btn-whatsapp:after {
-animation-delay: 1.3s;
-}
-
-.btn-whatsapp img {
-position: absolute;
-width: 70px;
-right: 15px;
-top: -30px;
-z-index: 2;
-}
-
-/* Boton flotante Facebook */
-.btn-face {
-position: fixed;
-bottom: 130px;
-right: 20px;
-}
-
-.btn-face:before,
-.btn-face:after {
-content: "";
-position: absolute;
-top: -55px;
-right: 30px;
-width: 45px;
-height: 45px;
-border-radius: 50%;
-background-color: #005ce6;
-opacity: 0;
-animation: onda 1.7s infinite;
-}
-
-.btn-face:before {
-animation-delay: 1s;
-}
-
-.btn-face:after {
-animation-delay: 1.3s;
-}
-
-.btn-face img {
-position: absolute;
-width: 50px;
-right: 25px;
-top: -55px;
-z-index: 2;
-
-}
-
-@keyframes onda {
-0% {
-  transform: scale(1);
-}
-15% {
-  opacity: 1;
-}
-100% {
-  opacity: 0;
-  transform: scale(2.5);
-}
-}
-
 
 /* Media queries para estilos responsivos */
 @media (max-width: 768px) {
