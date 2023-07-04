@@ -92,7 +92,7 @@ line-height: 30px;
   position: relative;
   width: 180px;
   height: 60px;
-  margin-top: 130px;
+  margin-top: 30px;
   border-radius: 20px;
   background-color: #ffffff;
 }
@@ -553,20 +553,20 @@ margin-bottom: -200px;
   background-color: #DC3434;
   width: 200px;
   height: 200px;
-  left: 230px;
+  left: 170px;
   bottom: -170px;
   border-radius: 20px;
 }
 .ORGANIGRAMA img{
-  width: 60%;
-  height: 900px;
+  width: 70%;
+  height: 600px;
   position: relative;
 }
 .cuadrado2{
   background-color: #171B41;
   width: 200px;
   height: 200px;
-  margin-left: 67%;
+  margin-left: 73%;
   margin-top: -170px;
   border-radius: 20px;
 }
